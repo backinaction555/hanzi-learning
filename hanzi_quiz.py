@@ -17,7 +17,15 @@ learned_hanzi = ["的","一","是","不","了","人","我","在","有","他",
                  '商','姐','京','衣','上','我','钟','昨','没',
                  '见', '工', '儿', '果', '住', '视', '太', '觉', '想', 
                  '和', '大', '话', '时', '西', '热', '爱', '八', '样','写',
-                 '再', '喂', '哪', '师', '分', '脑', '你', '谁'
+                 '再', '喂', '哪', '师', '分', '脑', '你', '谁', '北', '坐',
+                 '明','语', '气', '面', '好', '租', '多', '看', '五', '水', 
+                 '读', '做', '客', '友', '茶', '服', '三', '欢', '生', '回',
+                 '下', '号', '什', '很', '医', '菜', '些', '院', '学', '她', '个', '椅',
+                 '高', '家', '能', '店', '打', '小', '苹', '起', '老', '十', '兴', '都',
+                 '东', '书', '机', '里', '雨', '冷', '去', '么', '开', '候', '星', '飞',
+                 '杯', '同', '桌', '几', '本', '午', '名', '点', '米', '字', '听', '天',
+                 '期', '习', '吗', '会', '对', '前', '呢', '认', '妈', '睡', '校', '朋',
+                 '现', '猫', '请', '汉', '月'
                  ]
 
 learned_pinyin = [
@@ -29,7 +37,15 @@ learned_pinyin = [
  "shāng","jiě","jīng","yī","shàng","wǒ","zhōng","zuó","méi",
  "jiàn","gōng","ér","guǒ","zhù","shì","tài", "jué/jiào", "xiǎng",
 "hé", "dà", "huà", "shí", "xī", "rè", "ài", "bā", "yàng", "xiě", 
-"zài", "wèi", "nǎ",  "shī", "fēn", "nǎo",  "nǐ", "shéi"
+"zài", "wèi", "nǎ",  "shī", "fēn", "nǎo",  "nǐ", "shéi", "běi", "zuò",
+"míng","yǔ", "qì", "miàn", "hǎo", "zū", "duō", "kàn", "wǔ", "shuǐ", 
+"dú", "zuò", "kè", "yǒu", "chá", "fú", "sān", "huān", "shēng", "huí", 
+"xià", "hào", "shén", "hěn", "yī", "cài", "xiē", "yuàn", "xué", "tā", "gè", "yǐ",
+"gāo", "jiā", "néng", "diàn", "dǎ", "xiǎo",  "píng", "qǐ", "lǎo", "shí", "xìng", "dōu",
+"dōng", "shū", "jī", "lǐ", "yǔ", "lěng", "qù", "me", "kāi", "hòu", "xīng", "fēi", "bēi",
+"tóng", "zhuō", "jǐ", "běn", "wǔ", "míng", "diǎn", "mǐ", "zì", "tīng", "tiān", "qī", "xí",
+"ma", "huì", "duì", "qián", "ne", "rèn", "mā", "shuì", "xiào", "péng", "xiàn", "māo", "qǐng",
+"hàn", "yuè"
 ]
 
 normalized_pinyin = [remove_accents(word) for word in learned_pinyin]
@@ -49,6 +65,7 @@ incorrect = []
 counter = 0
 
 c = len(key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
+
 
 random_key_list = random.sample(key_list, len(key_list))
 
@@ -113,13 +130,15 @@ for x in very_hard_dict:
 
 
 
-with open("practice.txt", "w", encoding= "utf-8") as file:
-    for x in very_hard_list:
-        file.write(str(x[0]) + ": " + str(x[1]) + "\n")
+# with open("practice.txt", "w", encoding= "utf-8") as file:
+#     for x in very_hard_list:
+#         file.write(str(x[0]) + ": " + str(x[1]) + "\n")
         
 
 score = (correct/counter)*100
 print('')
 print('your final score is '+ str(score) + ' %') 
+
+
 
 
