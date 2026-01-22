@@ -2,6 +2,8 @@ from pypinyin import pinyin, Style
 import unicodedata
 import random
 
+again = 0
+
 def remove_accents(text):
     return ''.join(
         char for char in unicodedata.normalize('NFD', text)
@@ -245,21 +247,42 @@ def hsk2_quiz():
 
 
 
+def level_select():
+    level = 0
+    while level == 0:
+        hsk_level = input("which HSK level do you want to practice? Type 1 or 2: ")
+        if hsk_level == '1':
+            print(hsk1_quiz())
+            level = 1
+        elif hsk_level == '2':
+            print(hsk2_quiz())
+            level = 2
+        else:
+            level = 0
+print(level_select())
 
 
-level = 0
-while level == 0:
-    hsk_level = input("which HSK level do you want to practice? Type 1 or 2: ")
-    if hsk_level == '1':
-        print(hsk1_quiz())
-        level = 1
-    elif hsk_level == '2':
-        print(hsk2_quiz())
-        level = 2
+
+while again == 0:
+    another_practice = input('Do you want to continue practicing? Type yes or no: ')
+    if another_practice == 'yes':
+        again_level = 0
+        while again_level == 0:
+            which_level = input('Which level do you want to practice? Type 1 or 2: ')
+            if which_level == '1':
+                print(hsk1_quiz())
+                again_level = 1
+            elif which_level == '2':
+                print(hsk2_quiz())
+                
+    elif another_practice == 'no':
+        break
     else:
-        level = 0
+        again = 0
 
-        
+    
+
+
 
 
 
