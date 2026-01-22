@@ -10,7 +10,6 @@ def remove_accents(text):
         if unicodedata.category(char) != 'Mn'
     )
 
-
 def hsk1_quiz():
     hsk1_words = ['爱', '八', '爸爸', '杯子', '北京', '本', '不客气', '不', '菜', '茶',
               '吃', '出租车', '打电话', '大', '的', '点', '电脑', '电视', '电影', 
@@ -126,8 +125,6 @@ def hsk1_quiz():
     return 'your final score is '+ str(score) + ' %'
 
 
-
-
 def hsk2_quiz():
     hsk2_words = ['吧', '白', '百', '帮助', '报纸', '比', '别', '宾馆', '长', '唱歌', 
                 '出', '穿', '次', '从', '错', '打篮球', '大家', '到', '得', '等', 
@@ -169,7 +166,8 @@ def hsk2_quiz():
 
     counter = 0
 
-    c = len(hsk2_key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
+    # c = len(hsk2_key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
+    c = 5
 
 
     random_key_list = random.sample(hsk2_key_list, len(hsk2_value_list))
@@ -245,8 +243,6 @@ def hsk2_quiz():
     return 'your final score is '+ str(score) + ' %'
 
 
-
-
 def level_select():
     level = 0
     while level == 0:
@@ -262,7 +258,6 @@ def level_select():
 print(level_select())
 
 
-
 while again == 0:
     another_practice = input('Do you want to continue practicing? Type yes or no: ')
     if another_practice == 'yes':
@@ -274,6 +269,7 @@ while again == 0:
                 again_level = 1
             elif which_level == '2':
                 print(hsk2_quiz())
+                gain_level = 1
                 
     elif another_practice == 'no':
         break
