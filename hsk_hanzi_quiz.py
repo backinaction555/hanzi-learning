@@ -47,7 +47,8 @@ def hsk1_quiz():
 
     counter = 0
 
-    c = len(hsk1_key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
+    # c = len(hsk1_key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
+    c = 5
 
 
     random_key_list = random.sample(hsk1_key_list, len(hsk1_value_list))
@@ -120,7 +121,7 @@ def hsk1_quiz():
 
     score = (correct/counter)*100
     print('')
-    print('your final score is '+ str(score) + ' %')
+    return 'your final score is '+ str(score) + ' %'
 
 
 
@@ -244,4 +245,26 @@ def hsk2_quiz():
 
     score = (correct/counter)*100
     print('')
-    print('your final score is '+ str(score) + ' %')
+    return 'your final score is '+ str(score) + ' %'
+
+
+
+
+
+
+level = 0
+while level == 0:
+    hsk_level = input("which HSK level do you want to practice? 1 or 2?")
+    if hsk_level == '1':
+        print(hsk1_quiz())
+        level = 1
+    elif hsk_level == '2':
+        print(hsk2_quiz())
+        level = 2
+    else:
+        level = 0
+    
+        
+
+
+
