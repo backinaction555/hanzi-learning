@@ -7,6 +7,3 @@ This is a program to help with studying hanzi based on HSK levels
 -Python 2.7+
 -pypinyin
 
-
-
-
