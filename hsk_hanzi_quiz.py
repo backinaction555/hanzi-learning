@@ -126,11 +126,6 @@ def hsk1_quiz():
 
 
 
-
-
-
-
-
 def hsk2_quiz():
     hsk2_words = ['吧', '白', '百', '帮助', '报纸', '比', '别', '宾馆', '长', '唱歌', 
                 '出', '穿', '次', '从', '错', '打篮球', '大家', '到', '得', '等', 
@@ -254,7 +249,7 @@ def hsk2_quiz():
 
 level = 0
 while level == 0:
-    hsk_level = input("which HSK level do you want to practice? 1 or 2?")
+    hsk_level = input("which HSK level do you want to practice? Type 1 or 2: ")
     if hsk_level == '1':
         print(hsk1_quiz())
         level = 1
@@ -263,7 +258,7 @@ while level == 0:
         level = 2
     else:
         level = 0
-    
+
         
 
 
