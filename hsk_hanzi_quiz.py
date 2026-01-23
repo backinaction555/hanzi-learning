@@ -4,6 +4,7 @@ import random
 
 again = 0
 
+
 def remove_accents(text):
     return ''.join(
         char for char in unicodedata.normalize('NFD', text)
@@ -49,13 +50,35 @@ def hsk1_quiz():
     counter = 0
 
     # c = len(hsk1_key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
-    c = 5
+    is_it_num = False
+    while is_it_num == False:
+        c = input("how many do you want to practice? ")
+        try:
+            bool(int(c))
+            is_it_num = True
+        except ValueError:
+            is_it_num = False
+
+    is_it_num = False
+    while is_it_num == False:
+        hsk1_list_start = input("""what section do you want to practice? 
+                            To start at the beginning type: 1 
+                            To start at the second word type: 2. 
+                            To start at the third word type: 3 ...etc  """) 
+        try:
+            bool(int(hsk1_list_start))
+            is_it_num = True
+        except ValueError:
+            is_it_num = False
+    
+   
 
 
-    random_key_list = random.sample(hsk1_key_list, len(hsk1_value_list))
+
+    random_key_list = random.sample(hsk1_key_list[int(hsk1_list_start)-1: (int(hsk1_list_start)-1) + int(c)], int(c))
 
     # for x in random.sample(key_list, len(key_list)): #uncomment this line if you want to study all of the characters
-    for x in random_key_list[:c]: 
+    for x in random_key_list: 
         counter+=1
         answer=input('Hanzi: '+ str(x)+ ' Pinyin: ')
         print('')
@@ -167,13 +190,36 @@ def hsk2_quiz():
     counter = 0
 
     # c = len(hsk2_key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
-    c = 5
+    is_it_num = False
+    while is_it_num == False:
+        c = input("how many do you want to practice? ")
+        try:
+            bool(int(c))
+            is_it_num = True
+        except ValueError:
+            is_it_num = False
+
+    is_it_num = False
+    while is_it_num == False:
+        hsk2_list_start = input("""what section do you want to practice? 
+                            To start at the beginning type: 1 
+                            To start at the second word type: 2. 
+                            To start at the third word type: 3 ...etc  """) 
+        try:
+            bool(int(hsk2_list_start))
+            is_it_num = True
+        except ValueError:
+            is_it_num = False
+    
+   
 
 
-    random_key_list = random.sample(hsk2_key_list, len(hsk2_value_list))
+
+    random_key_list = random.sample(hsk2_key_list[int(hsk2_list_start)-1: (int(hsk2_list_start)-1) + int(c)], int(c))
+
 
     # for x in random.sample(key_list, len(key_list)): #uncomment this line if you want to study all of the characters
-    for x in random_key_list[:c]: 
+    for x in random_key_list[:int(c)]: 
         counter+=1
         answer=input('Hanzi: '+ str(x)+ ' Pinyin: ')
         print('')
