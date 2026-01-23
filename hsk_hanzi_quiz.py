@@ -49,27 +49,34 @@ def hsk1_quiz():
 
     counter = 0
 
-    # c = len(hsk1_key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
     is_it_num = False
     while is_it_num == False:
         c = input("how many do you want to practice? ")
-        try:
-            bool(int(c))
+        if c == 'all':
+            c = len(hsk1_words)
+            hsk1_list_start = 1
             is_it_num = True
-        except ValueError:
-            is_it_num = False
+        else:
+            try:
+                bool(int(c))
+                is_it_num = True
+            except ValueError:
+                is_it_num = False
 
-    is_it_num = False
-    while is_it_num == False:
-        hsk1_list_start = input("""what section do you want to practice? 
-                            To start at the beginning type: 1 
-                            To start at the second word type: 2. 
-                            To start at the third word type: 3 ...etc  """) 
-        try:
-            bool(int(hsk1_list_start))
-            is_it_num = True
-        except ValueError:
-            is_it_num = False
+    if c == len(hsk1_words):
+        pass
+    else:
+        is_it_num = False
+        while is_it_num == False:
+            hsk1_list_start = input("""what section do you want to practice? 
+                                To start at the beginning type: 1 
+                                To start at the second word type: 2. 
+                                To start at the third word type: 3 ...etc  """) 
+            try:
+                bool(int(hsk1_list_start))
+                is_it_num = True
+            except ValueError:
+                is_it_num = False
     
    
 
@@ -151,7 +158,7 @@ def hsk1_quiz():
 def hsk2_quiz():
     hsk2_words = ['吧', '白', '百', '帮助', '报纸', '比', '别', '宾馆', '长', '唱歌', 
                 '出', '穿', '次', '从', '错', '打篮球', '大家', '到', '得', '等', 
-                '弟弟', '第一', '懂', '对', '对', '房间', '非常', '服务员', '高', 
+                '弟弟', '第一', '懂', '对', '房间', '非常', '服务员', '高', 
                 '告诉', '哥哥', '给', '公共汽车', '公司', '贵', '过', '孩子', '还', 
                 '好吃', '黑', '红', '火车站', '机场', '鸡蛋', '件', '教室', '姐姐', 
                 '介绍', '近', '进', '就', '觉得', '咖啡', '开始', '考试', '可能', 
@@ -188,37 +195,42 @@ def hsk2_quiz():
 
 
     counter = 0
-
-    # c = len(hsk2_key_list) # change c to choose the number of characters to study....to study all, change c to len(key_list)
     is_it_num = False
     while is_it_num == False:
         c = input("how many do you want to practice? ")
-        try:
-            bool(int(c))
+        if c == 'all':
+            c = len(hsk2_words)
+            hsk2_list_start = 1
             is_it_num = True
-        except ValueError:
-            is_it_num = False
+        else:
+            try:
+                bool(int(c))
+                is_it_num = True
+            except ValueError:
+                is_it_num = False
 
-    is_it_num = False
-    while is_it_num == False:
-        hsk2_list_start = input("""what section do you want to practice? 
-                            To start at the beginning type: 1 
-                            To start at the second word type: 2. 
-                            To start at the third word type: 3 ...etc  """) 
-        try:
-            bool(int(hsk2_list_start))
-            is_it_num = True
-        except ValueError:
-            is_it_num = False
+    if c == len(hsk2_value_list):
+        pass
+    else:
+        is_it_num = False
+        while is_it_num == False:
+            hsk2_list_start = input("""what section do you want to practice? 
+                                To start at the beginning type: 1 
+                                To start at the second word type: 2. 
+                                To start at the third word type: 3 ...etc  """) 
+            try:
+                bool(int(hsk2_list_start))
+                is_it_num = True
+            except ValueError:
+                is_it_num = False
     
    
 
 
 
-    random_key_list = random.sample(hsk2_key_list[int(hsk2_list_start)-1: (int(hsk2_list_start)-1) + int(c)], int(c))
+    random_key_list = random.sample(hsk2_key_list[(int(hsk2_list_start)-1): (int(hsk2_list_start)-1) + int(c)], int(c))
 
-
-    # for x in random.sample(key_list, len(key_list)): #uncomment this line if you want to study all of the characters
+    
     for x in random_key_list[:int(c)]: 
         counter+=1
         answer=input('Hanzi: '+ str(x)+ ' Pinyin: ')
@@ -323,8 +335,4 @@ while again == 0:
         again = 0
 
     
-
-
-
-
 
