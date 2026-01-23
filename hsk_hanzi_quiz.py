@@ -105,7 +105,7 @@ def hsk1_quiz():
     if score == 100:
         print('')
         print('Congratulations you scored 100%')
-        exit()
+        
     else:
         print('')
         print('you scored ' + str(score))
@@ -251,7 +251,7 @@ def hsk2_quiz():
     if score == 100:
         print('')
         print('Congratulations you scored 100%')
-        exit()
+        
     else:
         print('')
         print('you scored ' + str(score))
